@@ -1,0 +1,8 @@
+name: "google.gemma-3-4b-it"
+output_name: "gemma_3_4B_Corrected_Dataset"
+client:
+  _target_: "rhianna_thesis.llm_clients.LiteLLMCompletionClient"
+  model_name: "bedrock/converse/google.gemma-3-4b-it"
+  temperature: 1.0
+  max_tokens: 2000
+  max_retries: 5

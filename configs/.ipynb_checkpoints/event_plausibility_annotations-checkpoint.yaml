@@ -1,0 +1,20 @@
+defaults:
+  - model: gemini3_1_flash_lite
+  - _self_
+
+paths:
+  dataset_path: "./dataset pipeline/Corrected_Dataset.csv"
+  annotation_output_dir: "./dataset pipeline"
+
+run:
+  save_every: 50
+  max_workers: 64
+
+event_likelihood:
+  progress_filename: "llm_ratings_Corrected_Dataset.csv"
+  final_filename: "Corrected_Dataset_llm_ratings_final.csv"
+
+hydra:
+  run:
+    dir: "."
+  output_subdir: null

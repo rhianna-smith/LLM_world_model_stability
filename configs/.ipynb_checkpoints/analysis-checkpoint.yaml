@@ -1,0 +1,47 @@
+paths:
+  ratings_path: "./dataset pipeline/Corrected_Dataset_llm_ratings_final.csv"
+  analysis_output_dir: "./outputs/pooled_judgment_analysis_llama_original_and_rerun"
+
+judgment_results:
+  # - model: "gpt-4.1"
+    # path: "./outputs/gpt4_1_rerun_and_original/final_experiment_llm_results.csv"
+  # - model: "gpt-5.4-mini"
+    # path: "./outputs/gpt5_4mini_rerun_and_original/final_experiment_llm_results.csv"
+  # - model: "gpt-5.5"
+    # path: "./outputs/gpt5.5_Corrected_Dataset/final_experiment_llm_results.csv"
+  # - model: "gemma-2_9B"
+    # path: "./outputs/gemma_2_9B/gemma_9B_Corrected_Dataset/final_experiment_llm_results.csv"
+  - model: "llama-3_8B"
+    path: "./outputs/llama3_8b/Llama31_8B_Corrected_Dataset/final_experiment_llm_results.csv"
+
+analysis:
+  merge_key: "base_experiment_ID"
+  cluster_col: "detail"
+  judgment_model_col: "judgment_model"
+  forward_selection_col: "forward_selected_option"
+  option_1_rating_col: "llm_rating_forward_answer_potential_statement1"
+  option_2_rating_col: "llm_rating_forward_answer_potential_statement2"
+  selected_rating_col: "selected_likelihood_rating"
+  selected_rating_source_col: "selected_likelihood_rating_source"
+  predictor_cols:
+    - "selected_likelihood_rating"
+  categorical_predictor_cols:
+    - "selected_likelihood_rating"
+  include_model_interactions: true
+  marginal_rating_values:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  lpm_outcomes:
+    - "is_fully_consistent"
+  logit_outcomes:
+    - "is_fully_consistent"
+  linear_outcomes:
+    - "total_consistency_score"
+  samples:
+    - name: "full_range"
+      min_selected_rating: null
+    - name: "at_least_plausible"
+      min_selected_rating: 3

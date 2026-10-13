@@ -1,0 +1,20 @@
+defaults:
+  - model: gpt5_4_mini
+  - _self_
+
+paths:
+  dataset_path: "../dataset pipeline/autoregressive_context_experiments_dataset.csv"
+  annotation_output_dir: "../dataset pipeline"
+
+run:
+  save_every: 25
+  max_workers: 8
+
+event_likelihood:
+  progress_filename: "gpt5_4_mini_autoregressive_context_likelihood_progress.csv"
+  final_filename: "gpt5_4_mini_autoregressive_context_likelihood_ratings.csv"
+
+hydra:
+  run:
+    dir: "."
+  output_subdir: null

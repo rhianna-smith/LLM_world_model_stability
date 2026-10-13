@@ -1,0 +1,17 @@
+defaults:
+  - model: gpt5_4_mini
+  - _self_
+
+paths:
+  dataset_path: "../dataset pipeline/gpt5_4_mini_autoregressive_context_leq3_with_supporters.csv"
+  #"../dataset pipeline/gpt5_4_mini_autoregressive_context_pilot10.csv"
+  output_root: "../outputs/autoregressive_context_pilot"
+
+run:
+  save_every: 5
+  max_workers: 10
+
+hydra:
+  run:
+    dir: "."
+  output_subdir: null

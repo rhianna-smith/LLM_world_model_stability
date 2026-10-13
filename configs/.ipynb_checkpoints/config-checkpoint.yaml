@@ -1,0 +1,16 @@
+defaults:
+  - model: gpt4_1
+  - _self_
+
+paths:
+  dataset_path: "./embs_dataset.csv"
+  output_root: "./outputs/embs_prelim"
+
+run:
+  save_every: 10
+  max_workers: 24
+
+hydra:
+  run:
+    dir: "."
+  output_subdir: null
