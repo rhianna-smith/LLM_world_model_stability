@@ -1,1 +1,1 @@
-# LLM_world_model_stability
+# LLM World Model Stability
