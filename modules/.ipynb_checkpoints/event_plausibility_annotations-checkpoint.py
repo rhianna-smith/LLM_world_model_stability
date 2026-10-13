@@ -3,8 +3,8 @@ import concurrent.futures
 import pandas
 import tqdm
 from omegaconf import DictConfig, OmegaConf
-from rhianna_thesis.annotation_prompts import EVENT_LIKELIHOOD_INSTRUCTIONS
-from rhianna_thesis.schemas import EventLikelihoodAnnotation
+from modules.annotation_prompts import EVENT_LIKELIHOOD_INSTRUCTIONS
+from modules.schemas import EventLikelihoodAnnotation
 from typing import Protocol
 
 class AnnotationClient(Protocol):

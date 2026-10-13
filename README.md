@@ -30,3 +30,15 @@ The experiment is configured through Hydra:
 - `modules/schemas.py` defines the structured LLM response schemas and plausibility-rating enum used by LiteLLM.
 - `run.max_workers` controls script-level thread parallelism for LLM calls.
 - Each run saves `resolved_config.yaml` into the model output directory.
+
+
+
+The paths specified in the scripts assume that the dataset is located in the data directory. The default paths are configured for GPT-5.4-mini.
+
+Run the following commands in order:
+
+```bash
+python run_event_plausibility_annotations.py model=gemini3_1_flash_lite
+python run_experiment.py model=gpt5_4_mini
+python run_analysis.py
+```

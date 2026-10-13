@@ -1,7 +1,7 @@
 name: "llama3_1_8b"
 output_name: "Llama31_8B_Corrected_Dataset"
 client:
-  _target_: "rhianna_thesis.llm_clients.LiteLLMCompletionClient"
+  _target_: "modules.llm_clients.LiteLLMCompletionClient"
   model_name: "bedrock/meta.llama3-8b-instruct-v1:0"
   temperature: 1.0
   max_tokens: 2048

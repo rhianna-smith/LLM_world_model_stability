@@ -1,6 +1,6 @@
 import os
 import pandas
-from rhianna_thesis.console import print_subbanner
+from modules.console import print_subbanner
 
 def model_to_table(model_name: str, model: object) -> pandas.DataFrame:
     conf_int = pandas.DataFrame(

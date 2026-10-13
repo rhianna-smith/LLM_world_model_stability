@@ -3,8 +3,8 @@ defaults:
   - _self_
 
 paths:
-  dataset_path: "./dataset pipeline/Corrected_Dataset.csv"
-  annotation_output_dir: "./dataset pipeline"
+  dataset_path: "./data/Corrected_Dataset.csv"
+  annotation_output_dir: "./data"
 
 run:
   save_every: 50

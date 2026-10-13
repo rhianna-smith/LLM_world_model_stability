@@ -3,10 +3,10 @@ import concurrent.futures
 import pandas
 import tqdm
 from omegaconf import DictConfig, OmegaConf
-from rhianna_thesis.dataset import load_dataset
-from rhianna_thesis.prompts import INSTRUCTION_TEMPLATE, REVERSE_INSTRUCTION_TEMPLATE
-from rhianna_thesis.schemas import LLMAnswer
-from rhianna_thesis.text import map_answer_to_option, map_answer_to_reverse_option, normalize_text
+from modules.dataset import load_dataset
+from modules.prompts import INSTRUCTION_TEMPLATE, REVERSE_INSTRUCTION_TEMPLATE
+from modules.schemas import LLMAnswer
+from modules.text import map_answer_to_option, map_answer_to_reverse_option, normalize_text
 from typing import Callable, Protocol
 
 class LLMClient(Protocol):

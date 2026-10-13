@@ -1,7 +1,7 @@
 import os
 import pandas
 from omegaconf import DictConfig
-from rhianna_thesis.console import print_subbanner
+from modules.console import print_subbanner
 
 def load_analysis_data(cfg: DictConfig) -> pandas.DataFrame:
     results_df = load_judgment_results(cfg)

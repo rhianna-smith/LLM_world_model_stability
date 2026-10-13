@@ -1,10 +1,10 @@
 import os
 from omegaconf import DictConfig, OmegaConf
-from rhianna_thesis.analysis_data import ensure_analysis_output_dirs, filter_analysis_sample, load_analysis_data
-from rhianna_thesis.analysis_margins import build_marginal_predictions, print_marginal_predictions, write_marginal_predictions
-from rhianna_thesis.analysis_models import fit_configured_models
-from rhianna_thesis.analysis_tables import models_to_table, print_model_outputs, write_model_outputs
-from rhianna_thesis.console import print_banner, print_subbanner
+from modules.analysis_data import ensure_analysis_output_dirs, filter_analysis_sample, load_analysis_data
+from modules.analysis_margins import build_marginal_predictions, print_marginal_predictions, write_marginal_predictions
+from modules.analysis_models import fit_configured_models
+from modules.analysis_tables import models_to_table, print_model_outputs, write_model_outputs
+from modules.console import print_banner, print_subbanner
 
 def run_analysis(cfg: DictConfig) -> None:
     print_banner("Starting Regression Analysis")

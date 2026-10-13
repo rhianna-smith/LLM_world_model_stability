@@ -1,76 +1,3 @@
-# # import time
-# # import litellm
-# # from litellm import completion
-# # from pydantic import BaseModel
-# # from rhianna_thesis.schemas import LLMAnswer
-# # from typing import Optional, TypeVar
-
-# # SchemaT = TypeVar("SchemaT", bound=BaseModel)
-
-# # class LiteLLMCompletionClient:
-# #     def __init__(
-# #         self,
-# #         model_name: str,
-# #         temperature: float,
-# #         max_tokens: int,
-# #         max_retries: int,
-# #         seed: Optional[int] = None
-# #     ) -> None:
-# #         self.model_name = model_name
-# #         self.temperature = temperature
-# #         self.max_tokens = max_tokens
-# #         self.max_retries = max_retries
-# #         self.seed = seed
-
-# #     def call(
-# #         self,
-# #         prompt: str,
-# #         instruction_template: str,
-# #         response_schema: type[SchemaT] = LLMAnswer
-# #     ) -> SchemaT:
-# #         retryable_errors = (
-# #             litellm.APIConnectionError,
-# #             litellm.APIError,
-# #             litellm.RateLimitError,
-# #             litellm.ServiceUnavailableError,
-# #             litellm.Timeout,
-# #         )
-
-# #         for attempt in range(self.max_retries):
-# #             try:
-# #                 response = completion(
-# #                     model=self.model_name,
-# #                     messages=[
-# #                         {
-# #                             "role": "system",
-# #                             "content": instruction_template,
-# #                         },
-# #                         {
-# #                             "role": "user",
-# #                             "content": prompt,
-# #                         },
-# #                     ],
-# #                     temperature=self.temperature,
-# #                     max_tokens=self.max_tokens,
-# #                     seed=self.seed,
-# #                     response_format=response_schema,
-# #                 )
-# #                 return response_schema.model_validate_json(response.choices[0].message.content)
-# #             except retryable_errors as error:
-# #                 wait_time = 2 ** attempt
-# #                 print(
-# #                     "LiteLLM error on attempt %s/%s: %s. Retrying in %ss"
-# #                     % (
-# #                         attempt + 1,
-# #                         self.max_retries,
-# #                         error,
-# #                         wait_time,
-# #                     )
-# #                 )
-# #                 time.sleep(wait_time)
-
-# #         raise RuntimeError("Max retries exceeded")
-
 import json
 import threading
 import time
@@ -80,7 +7,7 @@ import litellm
 from litellm import completion
 from pydantic import BaseModel, ValidationError
 
-from rhianna_thesis.schemas import LLMAnswer
+from modules.schemas import LLMAnswer
 
 SchemaT = TypeVar("SchemaT", bound=BaseModel)
 

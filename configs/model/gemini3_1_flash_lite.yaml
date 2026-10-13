@@ -1,7 +1,7 @@
 name: "gemini-3.1-flash-lite"
 output_name: "gemini3.1-flash-lite_Corrected_Dataset"
 client:
-  _target_: "rhianna_thesis.llm_clients.LiteLLMCompletionClient"
+  _target_: "modules.llm_clients.LiteLLMCompletionClient"
   model_name: "gemini/${model.name}"
   temperature: 1.0
   max_tokens: 2000

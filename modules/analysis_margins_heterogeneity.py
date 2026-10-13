@@ -1,7 +1,7 @@
 import os
 import pandas
-from rhianna_thesis.analysis_tables import dataframe_to_markdown
-from rhianna_thesis.console import print_subbanner
+from modules.analysis_tables import dataframe_to_markdown
+from modules.console import print_subbanner
 
 
 def build_marginal_predictions(

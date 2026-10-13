@@ -1,27 +1,27 @@
 import os
 from omegaconf import DictConfig, OmegaConf
 
-from rhianna_thesis.analysis_contrasts_heterogeneity import (
+from modules.analysis_contrasts_heterogeneity import (
     build_all_categorical_implied_effects,
     write_categorical_implied_effects,
 )
-from rhianna_thesis.analysis_data_heterogeneity import (
+from modules.analysis_data_heterogeneity import (
     ensure_analysis_output_dirs,
     filter_analysis_sample,
     load_analysis_data,
 )
-from rhianna_thesis.analysis_margins_heterogeneity import (
+from modules.analysis_margins_heterogeneity import (
     build_marginal_predictions,
     print_marginal_predictions,
     write_marginal_predictions,
 )
-from rhianna_thesis.analysis_models_heterogeneity import fit_configured_models
-from rhianna_thesis.analysis_tables import (
+from modules.analysis_models_heterogeneity import fit_configured_models
+from modules.analysis_tables import (
     models_to_table,
     print_model_outputs,
     write_model_outputs,
 )
-from rhianna_thesis.console import print_banner, print_subbanner
+from modules.console import print_banner, print_subbanner
 
 
 def run_analysis(cfg: DictConfig) -> None:

@@ -1,10 +1,10 @@
 defaults:
-  - model: gpt4_1
+  - model: gpt5_4_mini
   - _self_
 
 paths:
-  dataset_path: "./embs_dataset.csv"
-  output_root: "./outputs/embs_prelim"
+  dataset_path: "./data/Corrected_Dataset.csv"
+  output_root: "./outputs/gpt5_4_mini"
 
 run:
   save_every: 10
